@@ -1,0 +1,30 @@
+---
+layout: default
+title: Zen Habits
+---
+
+<div class="home-page">
+  <h1 class="my-4"> Recent Posts</h1>
+
+  <!-- Blog Post -->
+  {% for post in paginator.posts%}
+  <div class="card mb-4">
+
+    <img class="card-img-top" src="{{site.baseurl}}/img/{{post.thumbnail}}" alt="Card image cap">
+
+    <div class="card-body">
+        <h2 class="card-title">{{post.title}}</h2>
+        <p class="card-text">{{post.excerpt}}</p>
+        <a href="{{ post.url | absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
+    </div>
+
+    <div class="card-footer text-muted">
+      Posted on {{post.date | date: "%b %d, %Y"}} by
+      <a href="#">{{post.author}}</a>
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Pagination -->
+      {% include paginator.html %}
+</div>

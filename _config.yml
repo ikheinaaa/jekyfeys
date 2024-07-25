@@ -1,0 +1,22 @@
+markdown: kramdown
+baseurl: /
+permalink: pretty
+exclude: ['README.md']
+paginate: 3
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      category: "standups"
+      author: "Jacob Helton"
+      banner_image: "900x300.png"
+      thumbnail: "750x300.png"
